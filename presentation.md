@@ -137,10 +137,10 @@ i32.add        ; Pop two values, add, push result
 
 # WIT: WebAssembly Interface Types
 
-## The Interface Definition Language for WASM
+### The Interface Definition Language for WASM
 
 - **Problem**: WASM only supports basic types (i32, i64, f32, f64)
-- **WIT Solution**: Define rich interfaces with strings, records, variants, lists
+- **WIT**: Define rich interfaces with strings, records, variants, lists
 
 ```wit
 interface calculator {
