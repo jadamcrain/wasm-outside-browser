@@ -26,33 +26,33 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 - **Stack-based virtual machine**: Low-level bytecode
 - **Language agnostic**: Compile from C/C++, Rust, Go, C#, etc.
-- **Sandboxed**: Memory-safe, capability-based security model
 - **Portable**: Write once, run anywhere (browsers, servers, edge, etc)
 - **Small & fast**: Compact binary format, fast startup times
 
 ---
 <!-- footer: "" -->
+
 ### "BYTE CODE"
 ### "VIRTUAL MACHINE"
+### "WRITE ONCE, RUN ANYWHERE"
 
-![width:600px](./static/duke_blurred.png)
+
+![bg right width:600px](./static/duke_blurred.png)
 
 ---
 <!-- footer: "" -->
 # NOPE
 
-![width:600px](./static/duke_revealed.png)
+![bg right width:600px](./static/duke_revealed.png)
 
 ---
 
-# The JavaScript Performance Wall
+# Why?!
 
 - **JavaScript limitations**: Dynamic typing, JIT compilation overhead
-- **asm.js (2013)**: Mozilla's attempt at "assembly for the web"
-  - Subset of JavaScript optimized for AOT compilation
-  - Still parsed as JavaScript - inherently limited
 - **Need for true bytecode**: Faster parsing, smaller payloads, predictable performance
 - **Cross-language support**: Run C/C++/Rust/Go code in browsers efficiently
+- **Sandboxed**: Memory-safe, capability-based security model
 
 ---
 
@@ -63,56 +63,48 @@ footer: 'Battalion Energy | June 10th, 2025'
 - **2019**: W3C standardization - became official web standard
 - **2020+**: WASI (WebAssembly System Interface) enables non-browser environments
 
-
 ---
 
-# Main Topic 1
+# Simplest WASM Binary
 
-## Key concept or idea
-
-- Supporting detail
-- Supporting detail
-- Supporting detail
-
----
-
-# Code Example
-
-```javascript
-function example() {
-    console.log("Hello, Marp!");
-    return "This is a code block";
+```rust
+#[unsafe(no_mangle)]
+pub extern "C" fn add(a: i32, b: i32) -> i32 {
+  a + b
 }
 ```
 
+```bash
+> cargo build --release --target wasm32-unknown-unknown
+```
+
+```bash
+> ls -ls /target/wasm32-unknown-unknown
+4 -rwxrwxr-x 2 jadamcrain jadamcrain  400 Jun 10 10:42 no_std_wasm.wasm
+```
+
+400 bytes!
+
 ---
 
-# Images and Media
+# What's inside?
 
-![bg right:40% 80%](https://via.placeholder.com/400x300)
+```bash
+> wasm-tools print target/wasm32-unknown-unknown/no_std_wasm.wasm
+```
 
-## Content alongside image
-
-- Images can be positioned
-- Use `![bg right:40% 80%]` for background
-- Adjust size and position as needed
-
----
-
-# Two Column Layout
-
-<!-- _class: lead -->
-
-## Left Column
-- Point 1
-- Point 2
-- Point 3
-
-## Right Column
-- Point A
-- Point B
-- Point C
-
+```wasm
+(module $no_std_wasm.wasm
+  (type (;0;) (func (param i32 i32) (result i32)))
+  < ... omitted ...>
+  (func $add (;0;) (type 0) (param i32 i32) (result i32)
+    local.get 1
+    local.get 0
+    i32.add
+  )
+  < ... omitted ...>
+)
+```
 ---
 
 # Conclusion
