@@ -269,6 +269,40 @@ fn main() -> Result<()> {
 - **Web Server**: Middleware, request handlers, auth providers
 
 ---
+# The "Complexity Clock" for Configuration
+![bg right width:600px](./static/complexity-clock.png)
+
+> .... We’re back where we started four years ago, hard coding everything, except now in a much crappier language.
+
+
+https://mikehadlow.blogspot.com/2012/05/configuration-complexity-clock.html
+
+---
+# Configuring OpenTelemetry Collector in "OTTL"
+
+```yaml
+transform/edge_remap:
+    error_mode: ignore
+    log_statements:
+      - statements:
+        - merge_maps(log.cache, ParseJSON(log.body["MESSAGE"]), "insert")
+        
+        - set(log.attributes["unit"], log.body["_SYSTEMD_UNIT"])
+        - set(log.attributes["message"], log.cache["fields"]["message"])
+        - set(log.attributes["level"], log.cache["level"])
+        - set(log.attributes["spans"], log.cache["spans"])
+
+        - set(log.severity_number, 1) where log.cache["level"] == "TRACE"
+        - set(log.severity_number, 5) where log.cache["level"] == "DEBUG"
+        - set(log.severity_number, 9) where log.cache["level"] == "INFO"
+        - set(log.severity_number, 13) where log.cache["level"] == "WARN"
+        - set(log.severity_number, 17) where log.cache["level"] == "ERROR"
+
+        - keep_keys(log.attributes, ["unit", "site_name", "message", "level", "spans"])
+        - keep_keys(log.body, [])
+```
+
+---
 ![bg right width:600px](./static/micrologix.jpg)
 
 ### Programmable Logic Controller (PLC)
