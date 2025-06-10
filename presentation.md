@@ -36,7 +36,11 @@ blockquote {
 
 # Agenda
 
-- TODO
+- **What is WebAssembly?** - Beyond browsers
+- **WIT & WASI** - Interfaces and system APIs  
+- **Cloud Promise** - WASM vs containers
+- **Plugin Systems** - Safe, sandboxed execution
+- **Soft-PLC Case Study** - Industrial automation with WASM
 
 ---
 
@@ -59,7 +63,7 @@ blockquote {
 
 ---
 <!-- footer: "" -->
-# NOPE
+# I PROMISE IT'S NOT JAVA
 
 ![bg right width:600px](./static/duke_revealed.png)
 
@@ -287,10 +291,6 @@ fn main() -> Result<()> {
 </ul>
 
 ---
-# Our System
-
-
----
 
 ### Control Platform
 ![bg fit right](./static/ems.jpg)
@@ -310,15 +310,13 @@ fn main() -> Result<()> {
 <li>❌ <b>Not realtime but "fast enough"</b></li>
 </ul>
 
-
-
-
 ---
 
 # Questions?
-
+![bg right width:400px](./static/qr-code.png)
 
 - **Email**: adam.crain@battalion.energy
+- **Presentation**: QR Code ->
 - **GitHub**: @jadamcrain
 - **LinkedIn**: /in/energycoder
 
