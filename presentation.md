@@ -135,6 +135,22 @@ i32.add        ; Pop two values, add, push result
 
 ---
 
+# WIT: WebAssembly Interface Types
+
+## The Interface Definition Language for WASM
+
+- **Problem**: WASM only supports basic types (i32, i64, f32, f64)
+- **WIT Solution**: Define rich interfaces with strings, records, variants, lists
+
+```wit
+interface calculator {
+  add: func(a: s32, b: s32) -> s32
+  divide: func(dividend: f64, divisor: f64) -> result<f64, string>
+}
+```
+
+---
+
 # Questions?
 
 
