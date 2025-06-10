@@ -137,7 +137,7 @@ i32.add        ; Pop two values, add, push result
 
 # WIT: WebAssembly Interface Types
 
-### The Interface Definition Language for WASM
+### Interface Definition Language (IDL) for WASM
 
 - **Problem**: WASM only supports basic types (i32, i64, f32, f64)
 - **WIT**: Define rich interfaces with strings, records, variants, lists
@@ -216,6 +216,24 @@ fn main() -> Result<()> {
 - **No threads**: WASI doesn't support threading yet
 - **No shared memory**: Each WASM instance is isolated
 - **Limited async**: Basic futures work, but complex runtimes may not (Tokio)
+
+---
+
+# WIT-Based Plugin Systems
+
+- **Safe execution**: Sandboxed, untrusted code
+- **Language agnostic**: Plugins in Rust, Go, C, JS, Python
+- **Hot reload**: Update plugins without restarting host
+- **Resource control**: Fine-grained permissions per plugin
+
+---
+# Plug-in Examples
+
+- **Text Editor**: Syntax highlighting, formatters, language servers
+- **CI/CD Pipeline**: Custom build steps, deployment hooks, validators
+- **Data Processing**: ETL transforms, custom aggregations, filters
+- **Game Engine**: Scripting, mods, custom game logic
+- **Web Server**: Middleware, request handlers, auth providers
 
 ---
 
