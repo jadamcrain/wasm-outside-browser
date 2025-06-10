@@ -108,6 +108,23 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 ```
 ---
 
+## Think Reverse Polish Notation (RPN)
+
+**Infix:** `5 + 3`
+**RPN:** `5 3 +`
+
+**WASM Instructions:**
+```wasm
+local.get 1    ; Push param 1 onto stack
+local.get 0    ; Push param 0 onto stack  
+i32.add        ; Pop two values, add, push result
+```
+
+**Stack execution**: No registers, just push/pop operations
+**Same concept**: HP calculators, PostScript, Forth
+
+---
+
 # Questions?
 
 
