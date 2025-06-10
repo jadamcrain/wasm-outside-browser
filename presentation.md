@@ -31,6 +31,19 @@ footer: 'Battalion Energy | June 10th, 2025'
 - **Small & fast**: Compact binary format, fast startup times
 
 ---
+<!-- footer: "" -->
+### "BYTE CODE"
+### "VIRTUAL MACHINE"
+
+![width:600px](./static/duke_blurred.png)
+
+---
+<!-- footer: "" -->
+# NOPE
+
+![width:600px](./static/duke_revealed.png)
+
+---
 
 # The JavaScript Performance Wall
 
