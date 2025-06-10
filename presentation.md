@@ -1,41 +1,37 @@
 ---
 marp: true
-theme: default
-class: lead
+theme: gaia
+class:
+  - lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-header: 'Your Presentation Title'
-footer: 'Your Name | Date'
+footer: 'Battalion Energy | June 10th, 2025'
 ---
 
-# Your Presentation Title
+# WASM Outside the Browser
 
-## Subtitle or tagline
-
-**Your Name**
-*Date*
+**Adam Crain**
+*June 10th, 2025*
 
 ---
 
 # Agenda
 
-- Introduction
-- Main Topic 1
-- Main Topic 2
-- Main Topic 3
-- Conclusion
+- WASM History and Purpose
 - Q&A
 
 ---
 
-# Introduction
+# WASM History
 
-## Brief overview of what you'll cover
+- **2015**: WebAssembly first announced by Mozilla, Google, Microsoft, Apple
+- **2017**: MVP (Minimum Viable Product) shipped in all major browsers
+- **2019**: W3C standardization - became official web standard
+- **2020+**: WASI (WebAssembly System Interface) enables non-browser environments
+- **Today**: Growing ecosystem for server-side, edge computing, and embedded systems
 
-- Point 1
-- Point 2
-- Point 3
+
 
 ---
 

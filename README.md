@@ -46,7 +46,7 @@ marp presentation.md -o presentation.html
 marp presentation.md --theme path/to/theme.css -o presentation.html
 
 # Serve locally for development
-marp presentation.md --server
+marp --server .
 ```
 
 ### Build to PDF
