@@ -8,6 +8,19 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: 'Battalion Energy | June 10th, 2025'
 ---
+
+<style>
+blockquote {
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #333;
+  margin: 1em 0;
+  padding: 0.8em 1.2em;
+  font-style: italic;
+  border-radius: 4px;
+  color: #555;
+}
+</style>
+
 ![bg right width:300px](./static/wasm_logo.svg)
 # WebAssembly Outside the Browser
 
@@ -205,9 +218,8 @@ fn main() -> Result<()> {
 
 ---
 
-# Behind the Scenes & Limitations
+# Behind the Scenes
 
-**What happens:**
 - `std::fs` automatically maps to WASI filesystem APIs
 - Rust stdlib provides abstraction layer over WASI
 - Use `wasm32-wasip2` compilation target
@@ -216,6 +228,18 @@ fn main() -> Result<()> {
 - **No threads**: WASI doesn't support threading yet
 - **No shared memory**: Each WASM instance is isolated
 - **Limited async**: Basic futures work, but complex runtimes may not (Tokio)
+
+---
+
+# Better Than Containers?
+
+- **Cold Start:** Containers (100ms-2s) vs WASM (<1ms)
+- **Resources:** Containers (MB + OS) vs WASM (KB, no OS)
+- **Security:** Containers (kernel isolation) vs WASM (capability-based)
+- **Density:** Containers (10-100/host) vs WASM (1000s/host)
+
+> If WASM+WASI existed in 2008, we might not have needed Docker
+> — Solomon Hykes (Docker co-founder)
 
 ---
 
