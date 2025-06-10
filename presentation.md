@@ -174,6 +174,20 @@ interface calculator {
 
 ---
 
+# WASI: WASM System Interface
+
+- **Goal**: Portable system interface for non-browser environments
+- **WIT-Defined**: All WASI APIs are specified using WIT
+- **Capability-based**: Fine-grained permissions (no ambient authority)
+
+**WASI 0.2 Interfaces:**
+
+`filesystem` | `sockets` | `clocks` | `random` | `cli`
+
+**Result**: Write once, run on any WASI-compliant runtime
+
+---
+
 # Questions?
 
 
