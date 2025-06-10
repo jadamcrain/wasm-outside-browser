@@ -8,7 +8,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: 'Battalion Energy | June 10th, 2025'
 ---
-
+![bg right width:300px](./static/wasm_logo.svg)
 # WebAssembly Outside the Browser
 
 **Adam Crain**
