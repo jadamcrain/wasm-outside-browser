@@ -125,6 +125,16 @@ i32.add        ; Pop two values, add, push result
 
 ---
 
+# Design Advantages
+
+- **Simplicity**: No register allocation complexity
+- **Compact encoding**: Instructions don't specify operand locations
+- **Fast validation**: Easy to verify type safety during load
+- **Portable**: No assumptions about target architecture registers
+- **Streaming compilation**: Can compile without full module analysis
+
+---
+
 # Questions?
 
 
