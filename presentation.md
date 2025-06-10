@@ -203,6 +203,21 @@ fn main() -> Result<()> {
 }
 ```
 
+---
+
+# Behind the Scenes & Limitations
+
+**What happens:**
+- `std::fs` automatically maps to WASI filesystem APIs
+- Rust stdlib provides abstraction layer over WASI
+- Use `wasm32-wasip2` compilation target
+
+**Current Limitations:**
+- **No threads**: WASI doesn't support threading yet
+- **No shared memory**: Each WASM instance is isolated
+- **Limited async**: Basic futures work, but complex runtimes may not (Tokio)
+
+---
 
 # Questions?
 
