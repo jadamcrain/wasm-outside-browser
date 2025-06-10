@@ -58,6 +58,7 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 # WASM History
 
+- **2013**: asm.js - Mozilla's optimizable JavaScript subset proves concept (Doom 3 BFG & Unreal Engine)
 - **2015**: WebAssembly first announced by Mozilla, Google, Microsoft, Apple
 - **2017**: MVP (Minimum Viable Product) shipped in all major browsers
 - **2019**: W3C standardization - became official web standard
@@ -83,7 +84,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 4 -rwxrwxr-x 2 jadamcrain jadamcrain  400 Jun 10 10:42 no_std_wasm.wasm
 ```
 
-400 bytes!
+400 bytes (187 bytes striped)
 
 ---
 
