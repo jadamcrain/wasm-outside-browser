@@ -1,8 +1,6 @@
 ---
 marp: true
-theme: gaia
-class:
-  - lead
+theme: default
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
@@ -18,6 +16,13 @@ blockquote {
   font-style: italic;
   border-radius: 4px;
   color: #555;
+}
+.no-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+.no-bullet li {
+  margin-left: 0;
 }
 </style>
 
@@ -97,7 +102,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 4 -rwxrwxr-x 2 jadamcrain jadamcrain  400 Jun 10 10:42 no_std_wasm.wasm
 ```
 
-400 bytes (187 bytes striped)
+**400 bytes** (187 bytes striped)
 
 ---
 
@@ -258,6 +263,52 @@ fn main() -> Result<()> {
 - **Data Processing**: ETL transforms, custom aggregations, filters
 - **Game Engine**: Scripting, mods, custom game logic
 - **Web Server**: Middleware, request handlers, auth providers
+
+---
+![bg right width:600px](./static/micrologix.jpg)
+
+### Programmable Logic Controller (PLC)
+
+- Embedded hardware that executes user programs
+- Abstracts I/O and often communication (Modbus)
+- Used in manufacturing, energy, pharma, building control, theme parks
+
+
+---
+# Status Quo
+
+<ul class="no-bullet">
+<li>✅ <b>Real-time</b>: Guaranteed timing and excellent reliability
+<li>❌ <b>Expensive tooling</b>: $5K-$50K+ for software licenses</li>
+<li>❌ <b>Closed / proprietary ecosystems</b>: Siemens, Allen-Bradley, etc</li>
+<li>❌ <b>Limited languages</b>: LL, FBD, Structured Text</li>
+<li>❌ <b>High barrier to entry</b>: Expensive tools limit innovation</li>
+<li>❌ <b>Monolithic</b>: Hard to test, version, or modularize control logic</li>
+</ul>
+
+---
+![bg](./static/ems.jpg)
+
+---
+
+### Control Platform
+![bg right width:200](./static/moxa.jpg)
+<ul class="no-bullet">
+<li>✅ <b>Hardware agnostic</b></li>
+<li>✅ <b>Leverage modern CPUs</b></li>
+<li>✅ <b>Host abstracts I/O</b></li>
+</ul>
+
+### Pluggable "Logic"
+
+<ul class="no-bullet">
+<li>✅ <b>WASM plugins via WIT</b></li>
+<li>✅ <b>Rust ATM</b></li>
+<li>✅ <b>Deployable without recompile</b></li>
+</ul>
+
+
+
 
 ---
 
