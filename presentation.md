@@ -287,12 +287,13 @@ fn main() -> Result<()> {
 </ul>
 
 ---
-![bg](./static/ems.jpg)
+# Our System
+
 
 ---
 
 ### Control Platform
-![bg right width:200](./static/moxa.jpg)
+![bg fit right](./static/ems.jpg)
 <ul class="no-bullet">
 <li>✅ <b>Hardware agnostic</b></li>
 <li>✅ <b>Leverage modern CPUs</b></li>
@@ -304,7 +305,9 @@ fn main() -> Result<()> {
 <ul class="no-bullet">
 <li>✅ <b>WASM plugins via WIT</b></li>
 <li>✅ <b>Rust ATM</b></li>
-<li>✅ <b>Deployable without recompile</b></li>
+<li>✅ <b>Patch logic independently</b></li>
+<li>✅ <b>3rd parties just need the WIT</b></li>
+<li>❌ <b>Not realtime but "fast enough"</b></li>
 </ul>
 
 
