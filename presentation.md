@@ -9,7 +9,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: 'Battalion Energy | June 10th, 2025'
 ---
 
-# WASM Outside the Browser
+# WebAssembly Outside the Browser
 
 **Adam Crain**
 *June 10th, 2025*
@@ -22,13 +22,17 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 ---
 
-# What's WASM?
+# "Portable Assembly"
+
+- **Stack-based virtual machine**: Low-level bytecode
+- **Language agnostic**: Compile from C/C++, Rust, Go, C#, etc.
+- **Sandboxed**: Memory-safe, capability-based security model
+- **Portable**: Write once, run anywhere (browsers, servers, edge, etc)
+- **Small & fast**: Compact binary format, fast startup times
 
 ---
 
-# Why WASM?
-
-## The JavaScript Performance Wall
+# The JavaScript Performance Wall
 
 - **JavaScript limitations**: Dynamic typing, JIT compilation overhead
 - **asm.js (2013)**: Mozilla's attempt at "assembly for the web"
