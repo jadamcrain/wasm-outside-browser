@@ -22,12 +22,12 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 ---
 
-# "Portable Assembly"
+# WebAssembly (WASM)
 
 - **Stack-based virtual machine**: Low-level bytecode
 - **Language agnostic**: Compile from C/C++, Rust, Go, C#, etc.
-- **Portable**: Write once, run anywhere (browsers, servers, edge, etc)
 - **Small & fast**: Compact binary format, fast startup times
+- **Portable**: Write once, run anywhere (browsers, servers, edge, etc)
 
 ---
 <!-- footer: "" -->
@@ -47,7 +47,7 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 ---
 
-# Why?!
+# Why?
 
 - **JavaScript limitations**: Dynamic typing, JIT compilation overhead
 - **Need for true bytecode**: Faster parsing, smaller payloads, predictable performance
@@ -87,7 +87,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 
 ---
 
-# What's inside?
+# "Portable Assembly"
 
 ```bash
 > wasm-tools print target/wasm32-unknown-unknown/no_std_wasm.wasm
@@ -107,37 +107,10 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 ```
 ---
 
-# Conclusion
-
-## Summary of key points
-
-1. **Main takeaway 1**
-2. **Main takeaway 2** 
-3. **Main takeaway 3**
-
----
-
 # Questions?
 
-## Thank you for your attention!
 
-**Contact Information:**
-- Email: your.email@example.com
-- GitHub: @yourusername
-- LinkedIn: /in/yourprofile
+- **Email**: adam.crain@battalion.energy
+- **GitHub**: @jadamcrain
+- **LinkedIn**: /in/energycoder
 
----
-
-<!-- _class: lead -->
-
-# Backup Slides
-
-Additional content that might be useful during Q&A
-
----
-
-# Additional Resources
-
-- [Marp Documentation](https://marp.app/)
-- [Marp Themes](https://github.com/marp-team/marp-core/tree/main/themes)
-- [Markdown Guide](https://www.markdownguide.org/)
