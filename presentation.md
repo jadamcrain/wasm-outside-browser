@@ -18,8 +18,24 @@ footer: 'Battalion Energy | June 10th, 2025'
 
 # Agenda
 
-- WASM History and Purpose
-- Q&A
+- TODO
+
+---
+
+# What's WASM?
+
+---
+
+# Why WASM?
+
+## The JavaScript Performance Wall
+
+- **JavaScript limitations**: Dynamic typing, JIT compilation overhead
+- **asm.js (2013)**: Mozilla's attempt at "assembly for the web"
+  - Subset of JavaScript optimized for AOT compilation
+  - Still parsed as JavaScript - inherently limited
+- **Need for true bytecode**: Faster parsing, smaller payloads, predictable performance
+- **Cross-language support**: Run C/C++/Rust/Go code in browsers efficiently
 
 ---
 
@@ -29,8 +45,6 @@ footer: 'Battalion Energy | June 10th, 2025'
 - **2017**: MVP (Minimum Viable Product) shipped in all major browsers
 - **2019**: W3C standardization - became official web standard
 - **2020+**: WASI (WebAssembly System Interface) enables non-browser environments
-- **Today**: Growing ecosystem for server-side, edge computing, and embedded systems
-
 
 
 ---
