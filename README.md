@@ -1,82 +1,73 @@
-# Marp Presentation Template
+# WebAssembly Outside the Browser
 
-This repository contains a Marp presentation template for creating slide presentations using Markdown.
+This presentation explores WebAssembly's potential beyond web browsers, covering WIT/WASI interfaces, cloud computing applications, plugin systems, and a real-world industrial automation case study using WASM as a soft-PLC platform.
 
-## Installation (Ubuntu)
+## Prerequisites
 
-### Install Node.js and npm
+This presentation is built using [Marp](https://marp.app/), a Markdown presentation ecosystem. You'll need:
+
+- **Node.js** (16+ recommended)
+- **npm** or **yarn**
+- **Chromium/Chrome** (for PDF export)
+
+### Quick Setup (Ubuntu/Debian)
 ```bash
-# Update package list
-sudo apt update
-
 # Install Node.js and npm
-sudo apt install nodejs npm
+sudo apt update && sudo apt install nodejs npm
 
-# Verify installation
-node --version
-npm --version
-```
-
-### Install Marp CLI
-```bash
-# Install Marp CLI globally
+# Install Marp CLI
 npm install -g @marp-team/marp-cli
 
-# Verify installation
-marp --version
+# Install Chromium (for PDF export)
+sudo apt install chromium-browser
 ```
 
-### Install Puppeteer dependencies (for PDF export)
+### Quick Setup (macOS)
 ```bash
-# Install Chromium and required dependencies
-sudo apt install chromium-browser
+# Using Homebrew
+brew install node
+npm install -g @marp-team/marp-cli
+```
 
-# Or install required libraries for Puppeteer
-sudo apt install libnss3 libatk-bridge2.0-0 libdrm2 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libxss1 libasound2
+### Quick Setup (Windows)
+```bash
+# Using Chocolatey
+choco install nodejs
+npm install -g @marp-team/marp-cli
 ```
 
 ## Building the Presentation
 
-### Build to HTML
+### Generate HTML (for web viewing)
 ```bash
-# Build single HTML file
 marp presentation.md -o presentation.html
-
-# Build with custom theme
-marp presentation.md --theme path/to/theme.css -o presentation.html
-
-# Serve locally for development
-marp --server .
 ```
 
-### Build to PDF
+### Generate PDF (for sharing/printing)
 ```bash
-# Build PDF
 marp presentation.md --pdf -o presentation.pdf
-
-# Build PDF with custom page size
-marp presentation.md --pdf --pdf-notes -o presentation.pdf
 ```
 
-### Build Multiple Formats
+### Development Mode (live preview)
 ```bash
-# Build both HTML and PDF
-marp presentation.md -o presentation.html --pdf
+marp --server .
+# Open http://localhost:8080 in your browser
 ```
 
-## Usage
+## Content Overview
 
-1. Edit `presentation.md` with your content
-2. Use `---` to separate slides
-3. Add Marp directives in the frontmatter (between `---` at the top)
-4. Run build commands to generate your presentation
+The presentation covers:
 
-## Marp Syntax Highlights
+1. **WebAssembly Fundamentals** - What WASM is and why it matters
+2. **WIT & WASI** - Interface types and system APIs
+3. **Cloud Computing** - WASM vs containers comparison
+4. **Plugin Systems** - Building safe, sandboxed applications
+5. **Industrial Case Study** - Soft-PLC implementation using WASM
 
-- `<!-- _class: lead -->` - Center content on slide
-- `![bg right:40%](image.jpg)` - Background image positioning
-- `marp: true` - Enable Marp processing
-- `theme: default` - Set presentation theme
-- `paginate: true` - Add page numbers
+## Customization
 
-For more information, visit the [Marp documentation](https://marp.app/).
+- **Edit content**: Modify `presentation.md`
+- **Add images**: Place in `./static/` directory
+- **Styling**: Presentation uses default Marp theme with custom CSS
+- **Slides**: Separated by `---` markers
+
