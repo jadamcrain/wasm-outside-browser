@@ -151,6 +151,29 @@ interface calculator {
 
 ---
 
+# WIT Binding Generation
+
+```
+                    calculator.wit
+                         |
+                   wit-bindgen
+                    /         \
+                   /           \
+        Host Bindings       Guest Bindings
+     (Rust/Go/JS/Python)   (Rust/C/TinyGo)
+              |                   |
+              |                   |
+        Host Runtime          WASM Module
+      (wasmtime/wasmer)    (calculator.wasm)
+              |                   |
+              \_<<<<<<_____>>>>>>_/
+                      calls
+```
+
+**One interface → Multiple language bindings**
+
+---
+
 # Questions?
 
 
