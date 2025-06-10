@@ -174,7 +174,7 @@ interface calculator {
 
 ---
 
-# WASI: WASM System Interface
+# WASI: WA System Interface
 
 - **Goal**: Portable system interface for non-browser environments
 - **WIT-Defined**: All WASI APIs are specified using WIT
@@ -187,6 +187,22 @@ interface calculator {
 **Result**: Write once, run on any WASI-compliant runtime
 
 ---
+
+# Can my existing programs target WASM?
+
+**Reality**: Maybe?
+
+```rust
+use std::fs;
+use std::io::Result;
+
+fn main() -> Result<()> {
+    let contents = fs::read_to_string("config.toml")?;
+    println!("Config: {}", contents);
+    Ok(())
+}
+```
+
 
 # Questions?
 
