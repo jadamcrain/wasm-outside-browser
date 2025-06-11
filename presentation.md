@@ -80,7 +80,7 @@ blockquote {
 
 # WASM History
 
-- **2013**: asm.js - Mozilla's optimizable JavaScript subset proves concept (Doom 3 BFG & Unreal Engine)
+- **2013**: asm.js - Mozilla's optimizable JavaScript subset proved the concept (Doom 3 BFG & Unreal Engine)
 - **2015**: WebAssembly first announced by Mozilla, Google, Microsoft, Apple
 - **2017**: MVP (Minimum Viable Product) shipped in all major browsers
 - **2019**: W3C standardization - became official web standard
@@ -102,11 +102,11 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 ```
 
 ```bash
-> ls -ls /target/wasm32-unknown-unknown/release
+> ls -ls target/wasm32-unknown-unknown/release
 400 no_std_wasm.wasm
 ```
 
-**400 bytes** (187 bytes striped)
+**400 bytes** (187 bytes stripped)
 
 ---
 
@@ -196,7 +196,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 ```
 
 ```bash
-> ls -ls /target/wasm32-unknown-unknown/release
+> ls -ls target/wasm32-unknown-unknown/release
 33953 no_std_wasm.wasm
 ```
 
