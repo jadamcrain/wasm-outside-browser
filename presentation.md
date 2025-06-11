@@ -200,6 +200,19 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 33953 no_std_wasm.wasm
 ```
 
+---
+
+# Language Overhead Comparison
+
+| Language | Min Bundle Size | Bundled Features |
+|----------|----------------|------------------|
+| **Rust** | ~34KB | String handling, UTF-8, heap allocator |
+| **Go** | ~2MB+ | Garbage collector, goroutine runtime, full stdlib |
+| **Python** | ~10MB+ | CPython interpreter, stdlib modules, pip packages |
+
+**Key Insight**: More dynamic features = larger runtime overhead
+
+**Rust advantage**: Zero-cost abstractions, opt-in runtime features
 
 ---
 
