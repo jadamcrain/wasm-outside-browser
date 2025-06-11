@@ -36,7 +36,7 @@ blockquote {
 
 # Agenda
 
-- **What is WebAssembly?** - Beyond browsers
+- **What is WebAssembly?**
 - **WIT & WASI** - Interfaces and system APIs  
 - **Cloud Promise** - WASM vs containers
 - **Plugin Systems** - Safe, sandboxed execution
@@ -66,15 +66,6 @@ blockquote {
 # I PROMISE IT'S NOT JAVA
 
 ![bg right width:600px](./static/duke_revealed.png)
-
----
-
-# Why?
-
-- **JavaScript limitations**: Dynamic typing, JIT compilation overhead
-- **Need for true bytecode**: Faster parsing, smaller payloads, predictable performance
-- **Cross-language support**: Run C/C++/Rust/Go code in browsers efficiently
-- **Sandboxed**: Memory-safe, capability-based security model
 
 ---
 
