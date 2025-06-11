@@ -88,7 +88,7 @@ blockquote {
 
 ---
 
-# Simplest WASM Binary
+# Simplest WASM Binary - Stack Only
 
 ```rust
 #[unsafe(no_mangle)]
@@ -102,8 +102,8 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 ```
 
 ```bash
-> ls -ls /target/wasm32-unknown-unknown
-4 -rwxrwxr-x 2 jadamcrain jadamcrain  400 Jun 10 10:42 no_std_wasm.wasm
+> ls -ls /target/wasm32-unknown-unknown/release
+400 no_std_wasm.wasm
 ```
 
 **400 bytes** (187 bytes striped)
@@ -154,6 +154,52 @@ i32.add        ; Pop two values, add, push result
 - **Fast validation**: Easy to verify type safety during load
 - **Portable**: No assumptions about target architecture registers
 - **Streaming compilation**: Can compile without full module analysis
+
+---
+# What about using the heap?
+
+```rust
+#[unsafe(no_mangle)]
+pub extern "C" fn add(a: i32, b: i32) -> i32 {
+    let x = String::from("foo");
+    let y = String::from("bar");
+    (x.len() + y.len()) as i32
+}
+```
+
+```wasm
+(func $add (;0;) (type 0) (param i32 i32) (result i32)
+    i32.const 6
+)
+```
+
+Yes, this is an asinine function. The compiler also was able to determine the sum of string sizes at compile time. 🤦
+
+---
+# Getting trickier
+
+```rust
+#[unsafe(no_mangle)]
+pub extern "C" fn add(a: i32, b: i32) -> i32 {
+    let mut count = 0;
+    let x = String::from("foobar");
+    for c in x.chars() {
+        if "aeiouAEIOU".contains(c) {
+            count += 1;
+        }
+    }
+
+    count as i32
+}
+
+
+```
+
+```bash
+> ls -ls /target/wasm32-unknown-unknown/release
+33953 no_std_wasm.wasm
+```
+
 
 ---
 
